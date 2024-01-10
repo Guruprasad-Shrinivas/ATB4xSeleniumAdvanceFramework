@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/g.shrinivas.ganiga/IdeaProjects/ATB4xSeleniumAdvanceFramework">
+        <classes>
+            <class name="org.example.vwo.LoginTests.LoginTest">
+                <methods>
+                    <include name="testLoginPositive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

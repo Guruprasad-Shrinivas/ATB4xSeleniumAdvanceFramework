@@ -6,6 +6,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.awt.desktop.QuitEvent;
+import java.net.MalformedURLException;
+import java.sql.Driver;
+import java.util.Objects;
+
+import static org.example.driver.DriverManagerTL.setDriver;
 
 public class DriverManager {
 
@@ -32,4 +37,5 @@ public class DriverManager {
             driver=null;
         }
     }
+
 }

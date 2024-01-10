@@ -1,9 +1,9 @@
 package org.example.pages.PageObjectModel;
 
-import org.example.base.BasePage;
+import org.example.base.CommonToAllPage;
 import org.openqa.selenium.By;
 
-public class DashboardPage_POM extends BasePage {
+public class DashboardPage_POM extends CommonToAllPage {
 
     DashboardPage_POM(){
 

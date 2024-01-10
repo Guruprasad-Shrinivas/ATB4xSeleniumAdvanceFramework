@@ -1,20 +1,22 @@
 package org.example.pages.PageObjectModel;
 
-import org.example.base.BasePage;
-import org.example.driver.DriverManager;
+import org.example.base.CommonToAllPage;
+import org.example.driver.DriverManagerTL;
 import org.example.utils.PropertyReader;
 import org.openqa.selenium.By;
 
-public class LoginPage_POM extends BasePage {
+public class LoginPage_POM extends CommonToAllPage {
 
     public LoginPage_POM() {
+
         super();
     }
 
     //Page locators
-    By username = By.id("Login-username");
-    By password = By.id("Login-password");
+    By username = By.id("login-username");
+    By password = By.id("login-password");
     By signButton = By.id("js-login-btn");
+    By error_message = By.id("js-notification-box-msg");
 
     //Page Actions
 
@@ -26,6 +28,10 @@ public class LoginPage_POM extends BasePage {
         //Pass the control to the DashboardPage
         return this;
     }
+    public void openURL(String url){
+        DriverManagerTL.getDriver().get(url);
+        //return this;
+    }
 
     public void LoginToVWONegetive() throws Exception {
         enterInput(username, PropertyReader.readKey("username"));
@@ -34,6 +40,7 @@ public class LoginPage_POM extends BasePage {
     }
 
     public DashboardPage_POM afterLogin(){
+
         return new DashboardPage_POM();
     }
 }
