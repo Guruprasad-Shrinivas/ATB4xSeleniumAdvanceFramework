@@ -22,7 +22,7 @@ public class LoginPage_POM extends CommonToAllPage {
 
     public LoginPage_POM LoginToVWOPositive() throws Exception {
         enterInput(username, PropertyReader.readKey("username"));
-        enterInput(password, PropertyReader.readKey("password"));
+        enterInput(password,PropertyReader.readKey("password"));
         clickElement(signButton);
         //DriverManager.getDriver().findElement(password).click(); --- rather this line we written in base class
         //Pass the control to the DashboardPage
@@ -33,10 +33,13 @@ public class LoginPage_POM extends CommonToAllPage {
         //return this;
     }
 
-    public void LoginToVWONegetive() throws Exception {
-        enterInput(username, PropertyReader.readKey("username"));
+    public String LoginToVWONegetive() throws Exception {
+        enterInput(username, "admin");
         enterInput(password, PropertyReader.readKey("password"));
         clickElement(signButton);
+        //Error String
+        visibilityOfElement(error_message);
+        return getElement(error_message).getText();
     }
 
     public DashboardPage_POM afterLogin(){

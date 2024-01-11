@@ -10,19 +10,31 @@ import org.testng.asserts.Assertion;
 
 public class LoginTest extends CommonToAllTest {
 
-    @Test
-    public void testLoginPositive() throws Exception {
+    @Test(priority = 1)
+    public void testLoginNegative() throws Exception {
 
     //how to enter the user, pass and go to the Dashboard and verify
     LoginPage_POM pagePom = new LoginPage_POM();
     pagePom.openURL(PropertyReader.readKey("url"));
-    DashboardPage_POM dashboardPagePom = pagePom.LoginToVWOPositive().afterLogin();
-    String expected_username = dashboardPagePom.loggedUserName();
+    String error_message = pagePom.LoginToVWONegetive();
+        Assertions.assertThat(error_message)
+                .isNotNull()
+                .isNotBlank()
+                .contains(PropertyReader.readKey("error_message"));
+
+    }
+    @Test(priority = 2)
+    public void testLoginPositive() throws Exception {
+
+        //how to enter the user, pass and go to the Dashboard and verify
+        LoginPage_POM pagePom = new LoginPage_POM();
+        pagePom.openURL(PropertyReader.readKey("url"));
+        DashboardPage_POM dashboardPagePom = pagePom.LoginToVWOPositive().afterLogin();
+        String expected_username = dashboardPagePom.loggedUserName();
         Assertions.assertThat(expected_username)
                 .isNotNull()
                 .isNotBlank()
                 .contains(PropertyReader.readKey("expected_username"));
-
     }
 
     }
