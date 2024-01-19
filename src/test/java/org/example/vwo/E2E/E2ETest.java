@@ -7,7 +7,7 @@ public class E2ETest {
 //Run specific -> Smoke -> Grouping TestNG - Chnage testNG xml
 //Priority - 1,2,2,3,3,,100
 //Add Screenshot - Allure.Takescreen -?
-//on failure you want to do ITestleastener -> Rest Assured
+//on failure you want to do ITestleastener -> Rest Assured.
 //Run your code on Jenkins
 //Selenium Grid?
 //Distributed docker

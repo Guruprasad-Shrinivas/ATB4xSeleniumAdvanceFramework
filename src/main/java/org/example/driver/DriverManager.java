@@ -15,7 +15,7 @@ import static org.example.driver.DriverManagerTL.setDriver;
 public class DriverManager {
 
   //Static method - Shared by all the test cases.
-  //Thread local - 1 Class or Test per Driver
+  //Thread local - 1 Class or Test per Driver.
 
     static WebDriver driver;
 
